@@ -1,2 +1,2 @@
-# pcomplex_ontology
+# pcomplex
 Módulo de Ontologias para a Plataforma Complexa
