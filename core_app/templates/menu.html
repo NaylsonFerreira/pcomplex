@@ -1,0 +1,7 @@
+<div class="ui container">
+    <div class="ui menu">
+        <a class="item" href="/">Início</a>
+        <a class="item" href="{% url 'core_app:Update_profile' request.user.profile.pk %}">Perfil</a>
+        <a class="item right" href="{% url 'core_app:logout' %}">Sair</a>
+    </div>
+</div>

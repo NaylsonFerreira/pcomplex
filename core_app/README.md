@@ -1,0 +1,1 @@
+Projeto core_app Django
