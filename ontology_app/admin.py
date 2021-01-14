@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import Perfil, Sujeito, Jogador, Jogo
 
-# Register your models here.
+admin.site.register({Perfil, Sujeito, Jogador, Jogo})

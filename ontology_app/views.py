@@ -6,9 +6,12 @@ from pcomplex_project.settings import BASE_DIR
 
 
 def index(request):
-    path = str(BASE_DIR)+"/ontology_app/ontologies"
+    return HttpResponse("player_profile")
+
+
+def load_ontology(request):
+    path = str(BASE_DIR) + "/ontology_app/ontologies"
     onto_path.append(path)
     player_profile = get_ontology("PlayerProfile.owl")
     player_profile.load()
-    sync_reasoner()
-    return HttpResponse("player_profile")
+    # sync_reasoner()

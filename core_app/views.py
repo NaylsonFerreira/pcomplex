@@ -77,7 +77,8 @@ def singup(request):
     else:
         status = 200
         form = UserCreationForm()
-    return render(request, 'core_app/singup.html', {'form': form}, status=status)
+    return render(request, 'core_app/singup.html',
+                  {'form': form}, status=status)
 
 
 class ProfileJson(viewsets.ModelViewSet):
