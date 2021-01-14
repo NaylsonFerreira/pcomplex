@@ -1,0 +1,2116 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#"
+     xml:base="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#É_habilidade_do -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#É_habilidade_do">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Atividades_Domésticas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Atividades_Domésticas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Audaz -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Audaz">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Autoconstrução -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Autoconstrução">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Câmera"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenhos_Animados"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogadores"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Microfone"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Concentração -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Concentração">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Atividades_Domésticas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Matemática"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Conquistador -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Conquistador">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Autoconstrução"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Raciocínio_lógico"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Criatividade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Criatividade">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenhos_Animados"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Câmera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Câmera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenhos_Animados -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenhos_Animados">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza_em_associação -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza_em_associação">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza_fonética -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza_fonética">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Microfone"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza_visual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza_visual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Câmera"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade_Rápida"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento_de_cores -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento_de_cores">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenhos_Animados"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento_de_formas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento_de_formas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Empatia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Empatia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Atividades_Domésticas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogadores"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Empreendedor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Empreendedor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Autoconstrução"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Concentração"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Criatividade"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Raciocínio_lógico"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Estrategista -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Estrategista">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Autoconstrução"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Concentração"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Memorização"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Raciocínio_lógico"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Explorador -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Explorador">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Autoconstrução"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Criatividade"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Empatia"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sensibilidade_musical"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidades_domésticas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidades_domésticas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Atividades_Domésticas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidades_motoras -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidades_motoras">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Atividades_Domésticas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogadores -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogadores">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Matemática -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Matemática">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Memorização -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Memorização">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Atividades_Domésticas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Câmera"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogadores"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Microfone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Microfone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Mundo_3d -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Mundo_3d">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_espaço -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_espaço">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_movimento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_movimento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_tempo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_tempo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_velocidade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_velocidade">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Raciocínio_lógico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Raciocínio_lógico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Matemática"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sensibilidade_musical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sensibilidade_musical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Microfone"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Interage_com"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sobrevivente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sobrevivente">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Autoconstrução"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Concentração"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Criatividade"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Memorização"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Raciocínio_lógico"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Socializador -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Socializador">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Autoconstrução"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Empatia"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidades_domésticas"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sensibilidade_musical"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade_Lenta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade_Lenta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade_Rápida"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade_Rápida -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade_Rápida">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto_ABC -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto_ABC">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto_Melado -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto_Melado">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Angry_Birds -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Angry_Birds">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenhos_Animados"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Matemática"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Aprender_a_ler_e_escrever -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Aprender_a_ler_e_escrever">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Matemática"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Banana_Kong -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Banana_Kong">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenhos_Animados"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Mundo_3d"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Colorir_e_Aprender -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Colorir_e_Aprender">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Câmera -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Câmera">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Câmera"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Mundo_3d"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Dancing_Road -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Dancing_Road">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Estacionamento -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Estacionamento">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Matemática"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Fruit_Ninja -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Fruit_Ninja">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Meu_Talking_TOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Meu_Talking_TOM">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Minha_Talking_Angela -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Minha_Talking_Angela">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Minion_Rush -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Minion_Rush">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogadores"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Piano_Kids -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Piano_Kids">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Piano_Tiles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Piano_Tiles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sonic_Dash -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sonic_Dash">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogadores"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Subway_Surfers -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Subway_Surfers">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogadores"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade_Lenta"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#The_Cook -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#The_Cook">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Atividades_Domésticas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Mundo_3d"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#YouTube -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#YouTube">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Alfabeto"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Atividades_Domésticas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenhos_Animados"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Matemática"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Microfone"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Músicas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sons"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Zombie_Tsunami -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Zombie_Tsunami">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Avatar"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogadores"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Movimentos"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Mundo_3d"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pessoas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pets"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Pontaria"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Velocidade_Rápida"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#ana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#ana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Empatia"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sensibilidade_musical"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#julia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#julia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Criatividade"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Raciocínio_lógico"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#marcos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#marcos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidades_domésticas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidades_motoras"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Raciocínio_lógico"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#mateus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#mateus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Autoconstrução"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Criatividade"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Empatia"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_habilidade"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sensibilidade_musical"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#1010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#1010">
+        <rdf:type rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Desenho"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Formas"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Tem_sujeito"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Partes"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Autoconstrução"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Concentração"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Criatividade"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza_em_associação"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza_fonética"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Destreza_visual"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento_de_cores"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Discernimento_de_formas"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Empatia"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidades_domésticas"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidades_motoras"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Memorização"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_espaço"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_movimento"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_tempo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Noções_de_velocidade"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Raciocínio_lógico"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sensibilidade_musical"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Habilidade"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogador"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Jogo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/naylsonferreira/ontologies/2020/10/untitled-ontology-18#Sujeito"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
