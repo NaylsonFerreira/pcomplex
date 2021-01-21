@@ -1,17 +1,12 @@
 # from django.shortcuts import render
 from django.http import HttpResponse
 # from .models import *
-from owlready2 import *
-from pcomplex_project.settings import BASE_DIR
+from .ontology import Ontology
 
 
 def index(request):
-    return HttpResponse("player_profile")
-
-
-def load_ontology(request):
-    path = str(BASE_DIR) + "/ontology_app/ontologies"
-    onto_path.append(path)
-    player_profile = get_ontology("PlayerProfile.owl")
-    player_profile.load()
-    # sync_reasoner()
+    ontology = Ontology("PlayerProfile.owl")
+    players = ontology.get_instances_of("Jogador")
+    jogos = ontology.get_instances_of("Jogo")
+    print(players)
+    return HttpResponse(players)
