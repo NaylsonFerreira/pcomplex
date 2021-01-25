@@ -14,6 +14,10 @@ class Ontology:
         self.file_name = file_name
         self.prefix = prefix
         self.load()
+        try:
+            sync_reasoner()
+        except:
+            pass
     
     def load(self):
         ontology = get_ontology(self.file_name)
@@ -21,10 +25,11 @@ class Ontology:
         self.base_iri = ontology.base_iri
         self.ontology = ontology
 
-    def query(self, query=""):
+    def query(self, query="",show_print=False):
         set_import = "PREFIX "+self.prefix+": <"+self.base_iri+">\n"
         graph = default_world.as_rdflib_graph()
         query_SPARQL = set_import+query
+        if show_print: print (query_SPARQL)
         rows = list(graph.query(query_SPARQL))
         result = []
         for row in rows:
@@ -40,3 +45,16 @@ class Ontology:
         for instance in result:
             instances += instance
         return instances
+    
+    def get_sub_classes_of(self, by_class):
+        result = self.query(
+            "SELECT ?instances WHERE {?instances rdfs:subClassOf* "+self.prefix+":"+by_class+"}")
+        instances = []
+        for instance in result:
+            instances += instance
+        return instances
+
+    # def get_instance_in_class(self, by_class, by_name):
+        # ?a rdf:type owl:NamedIndividual .
+        # ?a rdf:type pps:Jogador .
+        # self.query("SELECT ?instances WHERE {?instances rdf:type "+self.prefix+":"+by_class+"}",True)
