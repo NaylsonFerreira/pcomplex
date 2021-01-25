@@ -16,3 +16,11 @@ def get_all_instances(request, by_class):
 def get_sub_class(request, by_class):
     sub_classes = ontology.get_sub_classes_of(by_class)
     return JsonResponse(sub_classes, safe=False)
+
+
+def get_tree_class(request, by_class):
+    sub_classes = ontology.get_sub_classes_of(by_class)
+    tree = {}
+    for branch in sub_classes:
+        tree[branch] = ontology.get_sub_classes_of(branch)
+    return JsonResponse(tree, safe=False)
