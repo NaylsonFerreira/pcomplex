@@ -15,7 +15,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Habilidade',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=50)),
             ],
             options={
@@ -26,7 +27,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Jogador',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=50)),
             ],
             options={
@@ -37,7 +39,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Sujeito',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=50, verbose_name='Objeto do jogo')),
             ],
             options={
@@ -48,9 +51,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Perfil',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=50)),
-                ('habilidade', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='ontology_app.habilidade')),
+                ('habilidade', models.ForeignKey(
+                    on_delete=django.db.models.deletion.PROTECT, to='ontology_app.habilidade')),
             ],
             options={
                 'verbose_name': 'Perfil',
@@ -60,9 +65,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Jogo',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=50)),
-                ('sujeito', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='ontology_app.sujeito')),
+                ('sujeito', models.ForeignKey(
+                    on_delete=django.db.models.deletion.PROTECT, to='ontology_app.sujeito')),
             ],
             options={
                 'verbose_name': 'Jogo',

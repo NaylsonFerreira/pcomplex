@@ -2,9 +2,9 @@ from django.http import HttpResponse, JsonResponse
 from .ontology import Ontology
 ontology = Ontology("PlayerProfile.owl")
 
-def index(request):    
+
+def index(request):
     players = ontology.get_instances_of("Jogador")
-    jogos = ontology.get_instances_of("Jogo")
     return HttpResponse(players)
 
 
