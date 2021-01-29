@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Python application
+name: Deploy Heroku
 
 on:
   workflow_dispatch:
@@ -38,8 +38,8 @@ jobs:
         python manage.py migrate
       env:
         DEBUG: 1
-        SECRET_KEY: '${{secrets.DB_PASSWORD}}'
-        FTP_STORAGE_LOCATION: 1
+        SECRET_KEY: ${{secrets.DB_PASSWORD}}
+        FTP_STORAGE_LOCATION: ${{secrets.FTP_STORAGE_LOCATION}}
         DB_HOST: ${{secrets.DB_HOST}}
         DB_NAME: ${{secrets.DB_NAME}}
         DB_USER: ${{secrets.DB_USER}}
