@@ -1,0 +1,1 @@
+web: gunicorn pcomplex_project.wsgi
