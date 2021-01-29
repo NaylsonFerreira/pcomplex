@@ -42,12 +42,8 @@ class Ontology:
         return result
 
     def get_instances_of(self, by_class):
-        result = self.query(
-            "SELECT ?instances WHERE {?instances rdf:type " +
-            self.prefix +
-            ":" +
-            by_class +
-            "}")
+        base_query = "SELECT ?instances WHERE {?instances rdf:type "
+        result = self.query(base_query + self.prefix + ":" + by_class + "}")
         instances = []
         for instance in result:
             instances += instance

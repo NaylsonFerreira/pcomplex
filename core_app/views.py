@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.core.validators import validate_email
-from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
