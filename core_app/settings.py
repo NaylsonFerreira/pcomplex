@@ -3,7 +3,7 @@ from decouple import config as get_env
 from django.conf import settings
 import os
 
-SECRET_KEY = get_env('SECRET_KEY')
+SECRET_KEY = get_env('SECRET_KEY', 'Debug')
 DEBUG = get_env('DEBUG', True)
 
 if get_env('DB_NAME', False):
@@ -32,10 +32,10 @@ ALLOWED_HOSTS = ['*']
 ADMINS = [('Naylson Ferreira', 'naylsonfsa@gmail.com')]
 EMAIL_HOST_USER = 'naylsonfsa@gmail.com'
 if get_env('EMAIL_HOST', False):
-    EMAIL_HOST = get_env('EMAIL_HOST')
-    EMAIL_HOST_PASSWORD = get_env('EMAIL_HOST_PASSWORD')
-    EMAIL_HOST_USER = get_env('EMAIL_HOST_USER')
-    EMAIL_PORT = 587
+    EMAIL_HOST = get_env('EMAIL_HOST', 'localhost')
+    EMAIL_HOST_PASSWORD = get_env('EMAIL_HOST_PASSWORD', '')
+    EMAIL_HOST_USER = get_env('EMAIL_HOST_USER', '')
+    EMAIL_PORT = get_env('EMAIL_HOST_USER', 587)
     EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'contato.overloadlab@gmail.com'
 LOGIN_URL = get_env('LOGIN_URL', '/login')

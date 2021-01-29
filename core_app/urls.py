@@ -1,6 +1,5 @@
 from django.urls import path, include, reverse_lazy
-from .views import singup_json, singup, ProfileJson, ProfileUpdateView, ProfileListView
-from django.contrib.auth.decorators import login_required
+from .views import singup_json, singup
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -8,7 +7,6 @@ from rest_framework.authtoken import views as auth_token
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('profile/json', ProfileJson, 'profile_json')
 
 app_name = "core_app"
 urlpatterns = [
@@ -22,13 +20,6 @@ urlpatterns = [
         name='logout'),
     path('singup/json/', singup_json, name='singup_json'),
     path('singup/', singup, name='singup'),
-    path('profile/up/<int:pk>/',
-         login_required(ProfileUpdateView.as_view()), name='Update_profile'),
-    path(
-        'profile/',
-        login_required(
-            ProfileListView.as_view()),
-        name='profile'),
     path('password_change/',
          auth_views.PasswordChangeView.as_view(
              template_name="core_app/password_change_form.html",
@@ -59,14 +50,7 @@ urlpatterns = [
          name='password_reset_complete'
          ),
     path('api/', include((router.urls, 'api'), namespace=None)),
-    path(
-        '',
-        include(
-            settings.DEFAULT_APP + '.urls',
-            namespace=settings.DEFAULT_APP)),
 ]
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL,
-                          document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)

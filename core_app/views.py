@@ -4,13 +4,8 @@ from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic.list import ListView
-from django.views.generic.edit import UpdateView
-from .serializers import ProfileSerializer
 import json
-from .models import Profile
 from rest_framework.authtoken.models import Token
-from rest_framework import viewsets
 from django.core.exceptions import ValidationError
 
 
@@ -55,6 +50,7 @@ def singup_json(request):
 
 
 def singup(request):
+    form = False
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -78,37 +74,3 @@ def singup(request):
         form = UserCreationForm()
     return render(request, 'core_app/singup.html',
                   {'form': form}, status=status)
-
-
-class ProfileJson(viewsets.ModelViewSet):
-    queryset = Profile.objects.all()
-    serializer_class = ProfileSerializer
-
-
-class ProfileListView(ListView):
-    model = Profile
-    paginate_by = 10
-    ordering = 'email'
-
-
-class ProfileUpdateView(UpdateView):
-    model = Profile
-    fields = [
-        'email',
-        'nome',
-        'apelido',
-        'foto',
-        'sobre',
-        'whatsapp',
-        'instagram',
-        'idade',
-        'genero'
-    ]
-    template_name = 'core_app/form.html'
-
-    def dispatch(self, request, *args, **kwargs):
-        instancia = self.get_object()
-        if instancia.user.pk != request.user.pk and not request.user.is_superuser:
-            return redirect(instancia)
-        return super(ProfileUpdateView, self).dispatch(
-            request, *args, **kwargs)

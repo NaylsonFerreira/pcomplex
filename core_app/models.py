@@ -3,8 +3,15 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from storages.backends.ftp import FTPStorage
+from django.core.files.storage import FileSystemStorage
 from rest_framework.authtoken.models import Token
-SERVIDOR_FTP_WEB = FTPStorage()
+from django.contrib import admin
+from django.conf import settings
+
+SERVIDOR_FTP_WEB = FileSystemStorage()
+
+if not settings.DEBUG:
+    SERVIDOR_FTP_WEB = FTPStorage()
 
 GENERO = (('M', 'Masculino'), ('F', 'Feminino'))
 
@@ -17,6 +24,7 @@ class Profile(models.Model):
         max_length=50,
         null=True,
         blank=True)
+    cpf = models.CharField(max_length=50, null=True, blank=True)
     apelido = models.CharField(
         'Como gostaria de ser chamado?',
         max_length=50,
@@ -41,7 +49,10 @@ class Profile(models.Model):
         blank=True)
 
     def __str__(self):
-        return str(self.email)
+        if not self.email:
+            self.email = self.user.username
+            self.save()
+        return self.email
 
     def get_absolute_url(self):
         return ('/profile')
@@ -49,7 +60,11 @@ class Profile(models.Model):
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, **kwargs):
-    Profile.objects.get_or_create(user=instance, email=instance.username)
+    try:
+        profile = Profile.objects.get(user=instance)
+    except Profile.DoesNotExist:
+        profile = Profile(user=instance, email=instance.username)
+        profile.save()
     Token.objects.get_or_create(user=instance)
 
 
@@ -60,3 +75,9 @@ def save_user_profile(sender, instance, created, ** kwargs):
     if instance.user.email != instance.email:
         instance.user.email = instance.email
     instance.user.save()
+
+
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'user', 'cpf', 'whatsapp')
+    list_display_links = ('__str__',)
+    empty_value_display = '--'
