@@ -39,6 +39,7 @@ jobs:
       env:
         DEBUG: 1
         SECRET_KEY: '${{secrets.DB_PASSWORD}}'
+        FTP_STORAGE_LOCATION: 1
         DB_HOST: ${{secrets.DB_HOST}}
         DB_NAME: ${{secrets.DB_NAME}}
         DB_USER: ${{secrets.DB_USER}}
