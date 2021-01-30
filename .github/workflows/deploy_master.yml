@@ -32,10 +32,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
     - name: Run new migrations
       run: |
-        python manage.py migrate core_app zero
-        python manage.py migrate auth zero
         python manage.py migrate
-        python manage.py createsuperuser --username naylsonfsa@gmail.com --email u@u.com --no-input
       env:
         DEBUG: 0
         SECRET_KEY: ${{secrets.DB_PASSWORD}}
