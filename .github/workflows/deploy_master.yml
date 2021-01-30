@@ -35,7 +35,7 @@ jobs:
         python manage.py migrate core_app zero
         python manage.py migrate auth zero
         python manage.py migrate
-        manage.py createsuperuser --username naylsonfsa@gmail.com --email u@u.com
+        python manage.py createsuperuser --username naylsonfsa@gmail.com --email u@u.com --no-input
       env:
         DEBUG: 0
         SECRET_KEY: ${{secrets.DB_PASSWORD}}
