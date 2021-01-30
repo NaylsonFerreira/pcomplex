@@ -33,8 +33,9 @@ jobs:
     - name: Run new migrations
       run: |
         python manage.py migrate core_app zero
-        python manage.py migrate ontology_app zero
+        python manage.py migrate auth zero
         python manage.py migrate
+        manage.py createsuperuser --username naylsonfsa@gmail.com --email u@u.com
       env:
         DEBUG: 0
         SECRET_KEY: ${{secrets.DB_PASSWORD}}
