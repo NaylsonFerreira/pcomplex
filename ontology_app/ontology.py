@@ -27,7 +27,13 @@ class Ontology:
         self.ontology = ontology
 
     def query(self, query="", show_print=False):
-        set_import = "PREFIX " + self.prefix + ": <" + self.base_iri + ">\n"
+        set_import = """
+        PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+        PREFIX %s:   <%s> \n
+        """ % (self.prefix, self.base_iri)
         graph = default_world.as_rdflib_graph()
         query_SPARQL = set_import + query
         if show_print:
@@ -42,22 +48,56 @@ class Ontology:
         return result
 
     def get_instances_of(self, by_class):
-        base_query = "SELECT ?instances WHERE {?instances rdf:type "
-        result = self.query(base_query + self.prefix + ":" + by_class + "}")
+        query = """
+        SELECT  ?instances
+        WHERE {
+                ?instances rdf:type owl:NamedIndividual .
+                ?instances rdf:type %s:%s
+            }
+        """ % (self.prefix, by_class)
+        result = self.query(query)
         instances = []
         for instance in result:
             instances += instance
         return instances
 
     def get_sub_classes_of(self, by_class):
-        result = self.query(
-            "SELECT ?instances WHERE {?instances rdfs:subClassOf* " + self.prefix + ":" + by_class + "}")
+        query = """
+        SELECT ?instances
+        WHERE {
+                ?instances rdfs:subClassOf* %s:%s
+            }
+        """ % (self.prefix, by_class)
+        result = self.query(query)
         instances = []
         for instance in result:
             instances += instance
         return instances
 
-    # def get_instance_in_class(self, by_class, by_name):
-        # ?a rdf:type owl:NamedIndividual .
-        # ?a rdf:type pps:Jogador .
-        # self.query("SELECT ?instances WHERE {?instances rdf:type "+self.prefix+":"+by_class+"}",True)
+    def get_instance(self, by_name):
+        query_properties = """
+        SELECT  ?properties ?values
+        WHERE {
+            %s:%s rdf:type ?all_types .
+            ?all_types owl:onProperty ?properties .
+            ?all_types owl:someValuesFrom ?values
+        }
+        """ % (self.prefix, by_name)
+        result_properties = self.query(query_properties)
+        properties = []
+        for row in result_properties:
+            properties.append(row[0] + " " + row[1])
+
+        query_class = """
+        SELECT  ?classes
+        WHERE {
+            %s:%s rdf:type ?classes .
+            ?classes rdf:type owl:Class
+        }
+        """ % (self.prefix, by_name)
+        result_class = self.query(query_class)
+        classes = []
+        for row in result_class:
+            classes += row
+
+        return classes + properties

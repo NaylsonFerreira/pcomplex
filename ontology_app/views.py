@@ -4,8 +4,7 @@ ontology = Ontology("PlayerProfile.owl")
 
 
 def index(request):
-    players = ontology.get_instances_of("Jogador")
-    return HttpResponse(players)
+    return HttpResponse("PyComplex")
 
 
 def get_all_instances(request, by_class):
@@ -24,3 +23,8 @@ def get_tree_class(request, by_class):
     for branch in sub_classes:
         tree[branch] = ontology.get_sub_classes_of(branch)
     return JsonResponse(tree, safe=False)
+
+
+def get_instance(request, by_name):
+    properties = ontology.get_instance(by_name)
+    return JsonResponse(properties, safe=False)
