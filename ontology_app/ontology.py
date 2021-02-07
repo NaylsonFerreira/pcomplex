@@ -1,11 +1,11 @@
 from owlready2 import onto_path, sync_reasoner, get_ontology, default_world
-from pcomplex_project.settings import ONTOLOGIES_DIR
+from pcomplex_project.settings import MEDIA_URL
 
 
 class Ontology:
-    dir_path = str(ONTOLOGIES_DIR)
+    dir_path = MEDIA_URL
     file_name = ""
-    path = dir_path + file_name
+    path = ""
     onto_path.append(dir_path)
     base_iri = ""
     ontology = ""
@@ -13,6 +13,7 @@ class Ontology:
 
     def __init__(self, file_name, prefix="myOnt"):
         self.file_name = file_name
+        self.path = self.dir_path + self.file_name
         self.prefix = prefix
         self.load()
         try:
@@ -21,7 +22,7 @@ class Ontology:
             pass
 
     def load(self):
-        ontology = get_ontology(self.file_name)
+        ontology = get_ontology(self.path)
         ontology.load()
         self.base_iri = ontology.base_iri
         self.ontology = ontology
