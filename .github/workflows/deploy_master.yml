@@ -32,6 +32,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
     - name: Run new migrations
       run: |
+        python manage.py migrate ontology_app zero
         python manage.py migrate
       env:
         DEBUG: 0
@@ -41,4 +42,3 @@ jobs:
         DB_NAME: ${{secrets.DB_NAME}}
         DB_USER: ${{secrets.DB_USER}}
         DB_PASSWORD: ${{secrets.DB_PASSWORD}}
-        DJANGO_SUPERUSER_PASSWORD: ${{secrets.DJANGO_SUPERUSER_PASSWORD}}

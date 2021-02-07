@@ -1,9 +1,9 @@
 from owlready2 import onto_path, sync_reasoner, get_ontology, default_world
-from pcomplex_project.settings import BASE_DIR
+from pcomplex_project.settings import ONTOLOGIES_DIR
 
 
 class Ontology:
-    dir_path = str(BASE_DIR) + "/ontology_app/ontologies/"
+    dir_path = str(ONTOLOGIES_DIR)
     file_name = ""
     path = dir_path + file_name
     onto_path.append(dir_path)

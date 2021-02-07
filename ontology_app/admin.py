@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Perfil, Sujeito, Jogador, Jogo
+from .models import Ontology, OntologyAdmin
 
-admin.site.register({Perfil, Sujeito, Jogador, Jogo})
+admin.site.register(Ontology, OntologyAdmin)
