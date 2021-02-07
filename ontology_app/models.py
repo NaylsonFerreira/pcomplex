@@ -13,7 +13,7 @@ from django.core.files.storage import FileSystemStorage
 
 SERVIDOR_FTP_WEB = FileSystemStorage()
 
-if not settings.DEBUG:
+if settings.FTP_STORAGE_LOCATION:
     SERVIDOR_FTP_WEB = FTPStorage()
 
 
