@@ -12,7 +12,7 @@ class Ontology:
     prefix = ""
 
     def __init__(self, file_name, prefix="myOnt"):
-        self.file_name = file_name
+        self.file_name = file_name.replace(ONTOLOGIES_DIR, '')
         self.prefix = prefix
         self.load()
         try:
