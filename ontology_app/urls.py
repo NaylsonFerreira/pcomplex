@@ -29,7 +29,7 @@ urlpatterns = [
          login_required(views.OntologyDetail.as_view()), name='OntologyDetail'),
 
     path('ontology/add/',
-         login_required(views.OntologyCreate.as_view()), name='OntologyCreate'),    
+         login_required(views.OntologyCreate.as_view()), name='OntologyCreate'),
 
     path('ontology/up/<int:pk>/',
          login_required(views.OntologyUpdate.as_view()), name='OntologyUpdate'),

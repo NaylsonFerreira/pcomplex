@@ -9,7 +9,8 @@ from .models import Ontology
 
 def index(request):
     tutorial = Ontology.objects.get(slug='PlayProfile')
-    return render(request, "ontology_app/homepage.html", {'tutorial': tutorial})
+    return render(request, "ontology_app/homepage.html",
+                  {'tutorial': tutorial})
 
 
 def get_all_instances(request, ont_name, by_class):
