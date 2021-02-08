@@ -1,0 +1,28 @@
+<div class="ui container  ">
+    <h3 class="ui right floated header ">
+        {% if page_obj.has_next %}
+        <a class="ui basic black button " href="?page={{ page_obj.next_page_number }}">
+            Próximo
+        </a>
+        <a class="ui basic black button " href="?page={{ page_obj.paginator.num_pages }}">
+            Último
+        </a>
+        {% endif %}
+    </h3>
+    <h3 class="ui left floated header ">
+        {% if page_obj.has_previous %}
+        <a class="ui basic black button " href="?page=1">
+            Primeiro
+        </a>
+        <a class="ui basic black button " href="?page={{ page_obj.previous_page_number }}">
+            Anterior
+        </a>
+        {% endif %}
+    </h3>
+</div>
+
+<div class="ui container  center aligned">
+    <div class="current ui header ">
+        Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+    </div>
+</div>

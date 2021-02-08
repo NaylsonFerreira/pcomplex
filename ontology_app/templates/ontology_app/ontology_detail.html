@@ -1,0 +1,66 @@
+{% extends "ontology_app/html_base.html" %}
+{% load i18n static %}
+{% block content %}
+<div class="ui main container">
+    <h1 class="ui header">PyComplex</h1>
+    <h3 class="ui header">Ontologias publicadas</h3>
+    <div class="ui items">
+        <div class="item">
+            <div class="middle aligned content">
+                <div class="header">
+                    {{ontology.name}}
+                </div>
+                <div class="description">
+                    <div class="ui list">
+                        <div class="item">
+                            <i class="folder icon"></i>
+                            <div class="content">
+                                <div class="header">subclasses</div>
+                                <div class="description">
+                                    <a class="item" href="/subclasses/{{ontology.slug}}/ClassName/" target="blank">
+                                        /subclasses/<b>{{ontology.slug}}</b>/ClassName/
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="folder icon"></i>
+                            <div class="content">
+                                <div class="header">tree</div>
+                                <div class="description">
+                                    <a class="item" href="/tree/{{ontology.slug}}/ClassName/" target="blank">
+                                        /tree/<b>{{ontology.slug}}</b>/ClassName/
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="folder icon"></i>
+                            <div class="content">
+                                <div class="header">instances</div>
+                                <div class="description">
+                                    <a class="item" href="/instances/{{ontology.slug}}/ClassName/" target="blank">
+                                        /instances/<b>{{ontology.slug}}</b>/ClassName/
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="folder icon"></i>
+                            <div class="content">
+                                <div class="header">instance</div>
+                                <div class="description">
+                                    <a class="item" href="/instance/{{ontology.slug}}/ClassName/" target="blank">
+                                        /instance/<b>{{ontology.slug}}</b>/InstanceName/
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

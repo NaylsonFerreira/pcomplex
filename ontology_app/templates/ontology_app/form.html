@@ -1,5 +1,8 @@
+{% extends "ontology_app/html_base.html" %}
 {% load i18n static %}
-<div class="ui container segment " style="margin-bottom:5em">
+{% block content %}
+<div class="ui container segment"  style="margin-top:10em">
+    <div class="ui header" >{{header}}</div>
     <form class="ui form formulario " action="" method="post" enctype="multipart/form-data">{% csrf_token %}
         {% if form.errors and not form.non_field_errors %}
         <p class="ui label">
@@ -24,3 +27,4 @@
         <button class="ui fluid button blue" type="submit">Salvar</button>
     </form>
 </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% load i18n static %}
+<div class="ui fixed inverted menu">
+    <div class="ui container">
+        <a href="/" class="header item">
+            <img class="logo" src="{% static 'logo2.png' %}">
+            PyComplex Tutorial
+        </a>
+        <a href="https://github.com/NaylsonFerreira/pcomplex" class="item">GitHub</a>
+        <a class="ui item" href="{% url 'ontology_app:OntologyList' %}">Ontologias publicadas</a>
+        <a class="ui item" href="{% url 'ontology_app:OntologyCreate' %}">Publicar ontologia</a>
+        <div class="right menu ">
+            {% if user.is_authenticated %}
+            <div class="item">
+                <a class="ui button basic inverted" href="{% url 'core_app:logout' %}">Sair</a>
+            </div>
+            {% else %}
+            <div class="item">
+                <a class="ui button" href="{% url 'core_app:login' %}">Entrar</a>
+            </div>
+            <div class="item">
+                <a class="ui primary button" href="{% url 'core_app:singup' %}">Criar conta</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

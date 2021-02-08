@@ -1,67 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
-
-    <!-- Site Properties -->
-    <title>PyComplex</title>
-
-    <style type="text/css">
-        body {
-            background-color: #FFFFFF;
-        }
-
-        .ui.menu .item img.logo {
-            margin-right: 1.5em;
-        }
-
-        .main.container {
-            margin-top: 7em;
-        }
-
-        .wireframe {
-            margin-top: 2em;
-        }
-
-        .ui.footer.segment {
-            margin: 5em 0em 0em;
-            padding: 5em 0em;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="ui fixed inverted menu">
-        <div class="ui container">
-            <a href="#" class="header item">
-                <img class="logo" src="http://overloadlab.com.br/khunters/static/khunters.png">
-                PyComplex
-            </a>
-            <a href="https://github.com/NaylsonFerreira/pcomplex" class="item">GitHub</a>
-            <div class="right menu ">
-                {% if user.is_authenticated %}
-                <div class="item">
-                    <a class="ui button basic inverted" href="{% url 'core_app:logout' %}">Sair</a>
-                </div>
-                {% else %}
-                <div class="item">
-                    <a class="ui button" href="{% url 'core_app:login' %}">Entrar</a>
-                </div>
-                <div class="item">
-                    <a class="ui primary button" href="{% url 'core_app:singup' %}">Criar conta</a>
-                </div>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-
+{% extends "ontology_app/html_base.html" %}
+{% load i18n static %}
+{% block content %}
     <div class="ui main container">
         <h1 class="ui header">PyComplex</h1>
         <h3 class="ui header">Acesse sua ontologia em formato JSON</h3>
@@ -76,7 +15,7 @@
                 {% endif %}
             </div>
             <div class="item">
-                <a href="{% url 'core_app:login' %}" class="ui header">Publique sua ontologia</a>
+                <a href="{% url 'ontology_app:OntologyCreate' %}" class="ui header">Publique sua ontologia</a>
             </div>
             <div class="item">
                 <div>
@@ -147,38 +86,5 @@
             </div>
         </div>
     </div>
-
-    <div class="ui vertical footer segment" style="margin-top: 10em;padding:1em">
-        <div class="ui section divider"></div>
-        <div class="ui center aligned container">
-            <div class="ui stackable inverted grid">
-                <div class="five wide column">
-                    <h3 class="ui header">Contato</h3>
-                    <div class="ui list">
-                        <div class="item">miltonmendes@ufersa.edu.br</div>
-                        <div class="item">tieldantas@gmail.com</div>
-                        <div class="item">naylsonfsa@gmail.com</div>
-                    </div>
-                </div>
+{% endblock %}
     
-                <div class="six wide column">
-                    <img class="ui image centered" style="padding-top:1em"
-                        src="https://overloadlab.com.br/khunters/static/khunters/logoufersa.png" alt="ufersa">
-                </div>
-    
-                <div class="five wide column">
-                    <img class="ui small image centered"
-                        src="https://overloadlab.com.br/khunters/static/khunters/overloadlab.png" alt="overloadlab">
-                </div>
-    
-            </div>
-            <div class="ui section divider"></div>
-            <div class="ui horizontal">
-                <div class="item">Copyrigth 2121 Todos os direitos reservados</div>
-                <a href="/admin" class="item">admin</a>
-            </div>
-        </div>
-    </div>
-</body>
-
-</html>

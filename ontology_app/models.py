@@ -37,7 +37,7 @@ class Ontology(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("Ontology_detail", kwargs={"pk": self.pk})
+        return reverse("ontology_app:OntologyDetail", kwargs={"pk": self.pk})
 
 
 @receiver(pre_save, sender=Ontology)

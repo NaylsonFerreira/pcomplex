@@ -1,5 +1,8 @@
 from django.http import JsonResponse
 from .ontology import Ontology as Ontology_class
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.shortcuts import render
 from .models import Ontology
 
@@ -38,3 +41,44 @@ def get_instance(request, ont_name, by_name):
     ontology = Ontology_class(ontology.file.name)
     properties = ontology.get_instance(by_name)
     return JsonResponse(properties, safe=False)
+
+
+class OntologyCreate(CreateView):
+    model = Ontology
+    fields = ['name', 'file']
+    template_name = 'ontology_app/form.html'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['header'] = "Publicar nova Ontologia"
+        return context
+
+
+class OntologyList(ListView):
+    model = Ontology
+    paginate_by = 10
+
+
+class OntologyDetail(DetailView):
+    model = Ontology
+
+
+class OntologyUpdate(UpdateView):
+    model = Ontology
+    exclude = ('user',)
+    template_name = 'ontology_app/form.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['header'] = "Editar Ontologia"
+        return context
+
+
+class OntologyDelete(DeleteView):
+    model = Ontology
+    exclude = ('user',)
+    template_name = 'ontology_app/form.html'
