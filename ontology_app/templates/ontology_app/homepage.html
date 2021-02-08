@@ -65,9 +65,8 @@
     <div class="ui main container">
         <h1 class="ui header">PyComplex</h1>
         <h3 class="ui header">Acesse sua ontologia em formato JSON</h3>
-        <p>PyComplex é um serviço online para lidar com ontologias.
-            Esse serviço posibilita a publicação de ontologias na internet.
-            Uma vez publicada a ontologia, será possivel acessar os recursos no formato JSON</p>
+        <p>PyComplex é um serviço online para lidar com ontologias. Esse serviço possibilita a publicação de ontologias na
+        internet. Uma vez publicada a ontologia, será possível acessar os recursos no formato JSON</p>
         <div class="ui bulleted list">
             <div class="ui item header">
                 {% if user.is_authenticated %}
@@ -81,12 +80,12 @@
             </div>
             <div class="item">
                 <div>
-                    <div class="ui header">Acesse o conteudo da ontologia pelo seguintes endpoints</div>
+                    <div class="ui header">Acesse o conteúdo da ontologia pelo seguintes endpoints:</div>
                 </div>
                 <div class="list">
                     <div class="item">
                         <div class="ui header">/subclasses</div>
-                        <p>O endpoint <i>/subclasses</i> retorna um array com as subclasses de uma classe especifica</p>
+                        <p>O endpoint <i>/subclasses</i> retorna um array com as subclasses de uma classe específica</p>
                         <a class="ui item" href="/subclasses/{{tutorial.slug}}/Jogador/" target="blank">
                             <i class="linkify icon"></i> /subclasses/<b>{{tutorial.slug}}</b>/Jogador/
                         </a>
@@ -98,7 +97,7 @@
                     </div>
                     <div class="item">
                         <div class="ui header">/tree</div>
-                        <p>O endpoint <i>/tree</i> retorna um array com a arvore de uma classes</p>
+                        <p>O endpoint <i>/tree</i> retorna um array com a árvore de uma classes</p>
                         <a class="ui item" href="/tree/{{tutorial.slug}}/Jogador/" target="blank">
                             <i class="linkify icon"></i> /tree/<b>{{tutorial.slug}}</b>/Jogador/
                         </a>
@@ -116,7 +115,7 @@
                     </div>
                     <div class="item">
                         <div class="ui header">/instances</div>
-                        <p>O endpoint <i>/instances</i> retorna um array com as instancias de uma classe especifica</p>
+                        <p>O endpoint <i>/instances</i> retorna um array com as instâncias de uma classe específica</p>
                         <a class="ui item" href="/instances/{{tutorial.slug}}/Jogador/" target="blank">
                             <i class="linkify icon"></i> /instances/<b>{{tutorial.slug}}</b>/Jogador/
                         </a>
@@ -133,7 +132,7 @@
                     <div class="item">
                         <div class="ui header">/instance</div>
                         <p>O endpoint <i>/instance</i> retorna um array com os <i>Types</i> e <i>Properties</i> de uma
-                            instancia especifica</p>
+                            instância específica</p>
                         <a class="ui item" href="/instance/{{tutorial.slug}}/julia/" target="blank">
                             <i class="linkify icon"></i> /instance/<b>{{tutorial.slug}}</b>/julia/
                         </a>
@@ -149,48 +148,34 @@
         </div>
     </div>
 
-    <div class="ui inverted vertical footer segment">
+    <div class="ui vertical footer segment" style="margin-top: 10em;padding:1em">
+        <div class="ui section divider"></div>
         <div class="ui center aligned container">
-            <div class="ui stackable inverted divided grid">
-                <div class="three wide column">
-                    <h4 class="ui inverted header">Group 1</h4>
-                    <div class="ui inverted link list">
-                        <a href="#" class="item">Link One</a>
-                        <a href="#" class="item">Link Two</a>
-                        <a href="#" class="item">Link Three</a>
-                        <a href="#" class="item">Link Four</a>
+            <div class="ui stackable inverted grid">
+                <div class="five wide column">
+                    <h3 class="ui header">Contato</h3>
+                    <div class="ui list">
+                        <div class="item">miltonmendes@ufersa.edu.br</div>
+                        <div class="item">tieldantas@gmail.com</div>
+                        <div class="item">naylsonfsa@gmail.com</div>
                     </div>
                 </div>
-                <div class="three wide column">
-                    <h4 class="ui inverted header">Group 2</h4>
-                    <div class="ui inverted link list">
-                        <a href="#" class="item">Link One</a>
-                        <a href="#" class="item">Link Two</a>
-                        <a href="#" class="item">Link Three</a>
-                        <a href="#" class="item">Link Four</a>
-                    </div>
+    
+                <div class="six wide column">
+                    <img class="ui image centered" style="padding-top:1em"
+                        src="https://overloadlab.com.br/khunters/static/khunters/logoufersa.png" alt="ufersa">
                 </div>
-                <div class="three wide column">
-                    <h4 class="ui inverted header">Group 3</h4>
-                    <div class="ui inverted link list">
-                        <a href="#" class="item">Link One</a>
-                        <a href="#" class="item">Link Two</a>
-                        <a href="#" class="item">Link Three</a>
-                        <a href="#" class="item">Link Four</a>
-                    </div>
+    
+                <div class="five wide column">
+                    <img class="ui small image centered"
+                        src="https://overloadlab.com.br/khunters/static/khunters/overloadlab.png" alt="overloadlab">
                 </div>
-                <div class="seven wide column">
-                    <h4 class="ui inverted header">Footer Header</h4>
-                    <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
-                </div>
+    
             </div>
-            <div class="ui inverted section divider"></div>
-            <img src="assets/images/logo.png" class="ui centered mini image">
-            <div class="ui horizontal inverted small divided link list">
-                <a class="item" href="#">Site Map</a>
-                <a class="item" href="#">Contact Us</a>
-                <a class="item" href="#">Terms and Conditions</a>
-                <a class="item" href="#">Privacy Policy</a>
+            <div class="ui section divider"></div>
+            <div class="ui horizontal">
+                <div class="item">Copyrigth 2121 Todos os direitos reservados</div>
+                <a href="/admin" class="item">admin</a>
             </div>
         </div>
     </div>
