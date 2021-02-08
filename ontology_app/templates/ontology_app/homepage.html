@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
+
+    <!-- Site Properties -->
+    <title>PyComplex</title>
+
+    <style type="text/css">
+        body {
+            background-color: #FFFFFF;
+        }
+
+        .ui.menu .item img.logo {
+            margin-right: 1.5em;
+        }
+
+        .main.container {
+            margin-top: 7em;
+        }
+
+        .wireframe {
+            margin-top: 2em;
+        }
+
+        .ui.footer.segment {
+            margin: 5em 0em 0em;
+            padding: 5em 0em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ui fixed inverted menu">
+        <div class="ui container">
+            <a href="#" class="header item">
+                <img class="logo" src="http://overloadlab.com.br/khunters/static/khunters.png">
+                PyComplex
+            </a>
+            <a href="https://github.com/NaylsonFerreira/pcomplex" class="item">GitHub</a>
+            <div class="right menu ">
+                {% if user.is_authenticated %}
+                <div class="item">
+                    <a class="ui button basic inverted" href="{% url 'core_app:logout' %}">Sair</a>
+                </div>
+                {% else %}
+                <div class="item">
+                    <a class="ui button" href="{% url 'core_app:login' %}">Entrar</a>
+                </div>
+                <div class="item">
+                    <a class="ui primary button" href="{% url 'core_app:singup' %}">Criar conta</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="ui main container">
+        <h1 class="ui header">PyComplex</h1>
+        <h3 class="ui header">Acesse sua ontologia em formato JSON</h3>
+        <p>PyComplex é um serviço online para lidar com ontologias.
+            Esse serviço posibilita a publicação de ontologias na internet.
+            Uma vez publicada a ontologia, será possivel acessar os recursos no formato JSON</p>
+        <div class="ui bulleted list">
+            <div class="ui item header">
+                {% if user.is_authenticated %}
+                Crie uma conta
+                {% else %}
+                <a href="{% url 'core_app:singup' %}" >Crie uma conta</a>
+                {% endif %}
+            </div>
+            <div class="item">
+                <a href="{% url 'core_app:login' %}" class="ui header">Publique sua ontologia</a>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="ui header">Acesse o conteudo da ontologia pelo seguintes endpoints</div>
+                </div>
+                <div class="list">
+                    <div class="item">
+                        <div class="ui header">/subclasses</div>
+                        <p>O endpoint <i>/subclasses</i> retorna um array com as subclasses de uma classe especifica</p>
+                        <a class="ui item" href="/subclasses/{{tutorial.slug}}/Jogador/" target="blank">
+                            <i class="linkify icon"></i> /subclasses/<b>{{tutorial.slug}}</b>/Jogador/
+                        </a>
+                        <div class="ui segment">
+                            [ "Jogador", "Explorador", "Sobrevivente", "Empreendedor", "Conquistador", "Audaz",
+                            "Estrategista", "Socializador" ]
+                        </div>
+                        <img class="ui image" src="https://overloadlab.com.br/pcomplex/static/doc/subclasses.png" />
+                    </div>
+                    <div class="item">
+                        <div class="ui header">/tree</div>
+                        <p>O endpoint <i>/tree</i> retorna um array com a arvore de uma classes</p>
+                        <a class="ui item" href="/tree/{{tutorial.slug}}/Jogador/" target="blank">
+                            <i class="linkify icon"></i> /tree/<b>{{tutorial.slug}}</b>/Jogador/
+                        </a>
+                        <div class="ui segment">
+                            { Jogador: [ "Jogador", "Explorador", "Sobrevivente", "Empreendedor", "Conquistador",
+                            "Audaz", "Estrategista",
+                            "Socializador" ], Explorador: [ "Explorador" ], Sobrevivente: [ "Sobrevivente",
+                            "Empreendedor", "Conquistador", "Audaz",
+                            "Estrategista" ], Empreendedor: [ "Empreendedor", "Conquistador", "Audaz" ], Conquistador: [
+                            "Conquistador", "Audaz" ],
+                            Audaz: [ "Audaz" ], Estrategista: [ "Estrategista", "Conquistador", "Audaz" ], Socializador:
+                            [ "Socializador" ] }
+                        </div>
+                        <img class="ui image" src="https://overloadlab.com.br/pcomplex/static/doc/tree.png" />
+                    </div>
+                    <div class="item">
+                        <div class="ui header">/instances</div>
+                        <p>O endpoint <i>/instances</i> retorna um array com as instancias de uma classe especifica</p>
+                        <a class="ui item" href="/instances/{{tutorial.slug}}/Jogador/" target="blank">
+                            <i class="linkify icon"></i> /instances/<b>{{tutorial.slug}}</b>/Jogador/
+                        </a>
+                        <div class="ui segment">
+                            [
+                            "ana",
+                            "julia",
+                            "marcos",
+                            "mateus"
+                            ]
+                        </div>
+                        <img class="ui image" src="https://overloadlab.com.br/pcomplex/static/doc/instances.png" />
+                    </div>
+                    <div class="item">
+                        <div class="ui header">/instance</div>
+                        <p>O endpoint <i>/instance</i> retorna um array com os <i>Types</i> e <i>Properties</i> de uma
+                            instancia especifica</p>
+                        <a class="ui item" href="/instance/{{tutorial.slug}}/julia/" target="blank">
+                            <i class="linkify icon"></i> /instance/<b>{{tutorial.slug}}</b>/julia/
+                        </a>
+                        <div class="ui segment">
+                            [ "Jogador", "Audaz", "Explorador", "Tem_habilidade Criatividade", "Tem_habilidade
+                            Discernimento", "Tem_habilidade
+                            Noções", "Tem_habilidade Raciocínio_lógico" ]
+                        </div>
+                        <img class="ui image" src="https://overloadlab.com.br/pcomplex/static/doc/instance.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui inverted vertical footer segment">
+        <div class="ui center aligned container">
+            <div class="ui stackable inverted divided grid">
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Group 1</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Link One</a>
+                        <a href="#" class="item">Link Two</a>
+                        <a href="#" class="item">Link Three</a>
+                        <a href="#" class="item">Link Four</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Group 2</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Link One</a>
+                        <a href="#" class="item">Link Two</a>
+                        <a href="#" class="item">Link Three</a>
+                        <a href="#" class="item">Link Four</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Group 3</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Link One</a>
+                        <a href="#" class="item">Link Two</a>
+                        <a href="#" class="item">Link Three</a>
+                        <a href="#" class="item">Link Four</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">Footer Header</h4>
+                    <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <img src="assets/images/logo.png" class="ui centered mini image">
+            <div class="ui horizontal inverted small divided link list">
+                <a class="item" href="#">Site Map</a>
+                <a class="item" href="#">Contact Us</a>
+                <a class="item" href="#">Terms and Conditions</a>
+                <a class="item" href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

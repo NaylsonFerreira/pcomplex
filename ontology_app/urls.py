@@ -17,7 +17,7 @@ urlpatterns = [
          get_all_instances,
          name="Instances"),
 
-    path('instance/<str:ont_name>/<slug:by_name>',
+    path('instance/<str:ont_name>/<slug:by_name>/',
          get_instance,
          name="Instance"),
 ]
