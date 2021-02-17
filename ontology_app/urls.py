@@ -26,6 +26,10 @@ urlpatterns = [
          views.create_or_update_instance,
          name="AddInstance"),
 
+    path('delete/instance/<str:ont_name>/<str:by_class>/<str:by_instance>/',
+         views.delete_instance,
+         name="DeleteInstance"),
+
     path('ontologies/',
          login_required(views.OntologyList.as_view()), name='OntologyList'),
 

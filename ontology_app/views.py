@@ -58,6 +58,15 @@ def create_or_update_instance(request, ont_name):
     return JsonResponse(properties, safe=False)
 
 
+@api_view(['DELETE'])
+def delete_instance(request, ont_name, by_class, by_instance):
+    ontology = Ontology.objects.get(slug=ont_name)
+    ontology = Ontology_class(ontology.file.name)
+    ontology.delete_instance(by_class, by_instance)
+    ontology.get_instance(by_instance)
+    return JsonResponse({})
+
+
 class OntologyCreate(CreateView):
     model = Ontology
     fields = ['name', 'file']

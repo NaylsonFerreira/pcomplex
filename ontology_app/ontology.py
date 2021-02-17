@@ -124,3 +124,14 @@ class Ontology():
             onto_file.save(self.path)
         except BaseException:
             pass
+
+    def delete_instance(self, class_name, instance_name):
+        onto_file = self.ontology
+        onto_class = self.ontology[class_name]
+
+        try:
+            new_instance = onto_class(instance_name, namespace=onto_file)
+            destroy_entity(new_instance)
+            onto_file.save(self.path)
+        except BaseException:
+            pass
