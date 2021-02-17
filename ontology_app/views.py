@@ -53,7 +53,10 @@ def create_or_update_instance(request, ont_name):
         'property_name': 'Tem_habilidade',
         'property_values': ['Empatia', 'Criatividade'],
     }
-    ontology.add_instance(payload)
+    try:
+        ontology.add_instance(payload)
+    except BaseException:
+        pass
     properties = ontology.get_instance(payload['instance_name'])
     return JsonResponse(properties, safe=False)
 

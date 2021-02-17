@@ -113,12 +113,15 @@ class Ontology():
         onto_class = self.ontology[class_name]
         onto_property = self.ontology[property_name]
 
-        new_instance = onto_class(instance_name, namespace=onto_file)
-        new_instance.is_a = []
+        try:
+            new_instance = onto_class(instance_name, namespace=onto_file, onto_property=[])
 
-        for value in property_values:
-            onto_value = self.ontology[value]
-            new_instance.is_a.append(onto_property.some(onto_value))
+            for value in property_values:
+                onto_value = self.ontology[value]
+                new_instance.is_a.append(onto_property.some(onto_value))
 
-        onto_file.save(self.path)
+            onto_file.save(self.path)
+        except BaseException:
+            pass
+
         self.load()
