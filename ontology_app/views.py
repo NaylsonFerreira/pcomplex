@@ -44,6 +44,20 @@ def get_instance(request, ont_name, by_name):
     return JsonResponse(properties, safe=False)
 
 
+def create_or_update_instance(request, ont_name):
+    ontology = Ontology.objects.get(slug=ont_name)
+    ontology = Ontology_class(ontology.file.name)
+    payload = {
+        'instance_name': 'Novo_Jogador',
+        'class_name': 'Jogador',
+        'property_name': 'Tem_habilidade',
+        'property_values': ['Empatia', 'Criatividade'],
+    }
+    ontology.add_instance(payload)
+    properties = ontology.get_instance(payload['instance_name'])
+    return JsonResponse(properties, safe=False)
+
+
 class OntologyCreate(CreateView):
     model = Ontology
     fields = ['name', 'file']

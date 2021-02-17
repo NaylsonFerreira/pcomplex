@@ -1,8 +1,8 @@
-from owlready2 import onto_path, sync_reasoner, get_ontology, default_world
+from owlready2 import onto_path, sync_reasoner, get_ontology, default_world, destroy_entity
 from pcomplex_project.settings import MEDIA_URL
 
 
-class Ontology:
+class Ontology():
     dir_path = MEDIA_URL
     file_name = ""
     path = ""
@@ -16,16 +16,16 @@ class Ontology:
         self.path = self.dir_path + self.file_name
         self.prefix = prefix
         self.load()
-        try:
-            sync_reasoner()
-        except BaseException:
-            pass
 
     def load(self):
         ontology = get_ontology(self.path)
         ontology.load()
         self.base_iri = ontology.base_iri
         self.ontology = ontology
+        try:
+            sync_reasoner()
+        except BaseException:
+            pass
 
     def query(self, query="", show_print=False):
         set_import = """
@@ -102,3 +102,23 @@ class Ontology:
             classes += row
 
         return classes + properties
+
+    def add_instance(self, payload):
+        class_name = payload['class_name']
+        instance_name = payload['instance_name']
+        property_name = payload['property_name']
+        property_values = payload['property_values']
+
+        onto_file = self.ontology
+        onto_class = self.ontology[class_name]
+        onto_property = self.ontology[property_name]
+
+        new_instance = onto_class(instance_name, namespace=onto_file)
+        new_instance.is_a = []
+
+        for value in property_values:
+            onto_value = self.ontology[value]
+            new_instance.is_a.append(onto_property.some(onto_value))
+
+        onto_file.save(self.path)
+        self.load()

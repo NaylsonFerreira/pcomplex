@@ -48,8 +48,7 @@ else:
     STATIC_ROOT = get_env('STATIC_ROOT', 'static/')
 MEDIA_URL = get_env('MEDIA_URL', 'media/')
 MEDIA_ROOT = os.path.join(settings.BASE_DIR, get_env('MEDIA_ROOT', 'media/'))
-FTP_STORAGE_LOCATION = get_env(
-    'FTP_STORAGE_LOCATION', 'ftp://user:password>@host:21')
+FTP_STORAGE_LOCATION = get_env('FTP_STORAGE_LOCATION', False)
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
