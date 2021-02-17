@@ -5,6 +5,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import render
 from .models import Ontology
+from rest_framework.decorators import api_view
 
 
 def index(request):
@@ -44,15 +45,11 @@ def get_instance(request, ont_name, by_name):
     return JsonResponse(properties, safe=False)
 
 
+@api_view(['POST', 'PUT'])
 def create_or_update_instance(request, ont_name):
     ontology = Ontology.objects.get(slug=ont_name)
     ontology = Ontology_class(ontology.file.name)
-    payload = {
-        'instance_name': 'Novo_Jogador',
-        'class_name': 'Jogador',
-        'property_name': 'Tem_habilidade',
-        'property_values': ['Empatia', 'Criatividade'],
-    }
+    payload = request.data
     try:
         ontology.add_instance(payload)
     except BaseException:

@@ -28,6 +28,7 @@ class Ontology():
             pass
 
     def query(self, query="", show_print=False):
+        self.load()
         set_import = """
         PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX owl:  <http://www.w3.org/2002/07/owl#>
@@ -114,14 +115,12 @@ class Ontology():
         onto_property = self.ontology[property_name]
 
         try:
-            new_instance = onto_class(instance_name, namespace=onto_file, onto_property=[])
-
+            new_instance = onto_class(instance_name, namespace=onto_file)
+            destroy_entity(new_instance)
+            new_instance = onto_class(instance_name, namespace=onto_file)
             for value in property_values:
                 onto_value = self.ontology[value]
                 new_instance.is_a.append(onto_property.some(onto_value))
-
             onto_file.save(self.path)
         except BaseException:
             pass
-
-        self.load()
