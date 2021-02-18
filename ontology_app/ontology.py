@@ -122,6 +122,7 @@ class Ontology():
                 onto_value = self.ontology[value]
                 new_instance.is_a.append(onto_property.some(onto_value))
             onto_file.save(self.path)
+            self.load()
         except BaseException:
             pass
 
@@ -133,5 +134,6 @@ class Ontology():
             new_instance = onto_class(instance_name, namespace=onto_file)
             destroy_entity(new_instance)
             onto_file.save(self.path)
+            self.load()
         except BaseException:
             pass
