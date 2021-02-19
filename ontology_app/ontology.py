@@ -102,7 +102,31 @@ class Ontology():
         for row in result_class:
             classes += row
 
-        return classes + properties
+        try:
+            query_class = """
+            SELECT DISTINCT ?games
+            WHERE {
+                %s:%s rdf:type ?all_types .
+                ?all_types owl:someValuesFrom ?habilidades .
+
+                ?habilidades rdfs:subClassOf myOnt:Habilidade .
+                ?habilidades rdfs:subClassOf ?Habtypes .
+                ?Habtypes owl:someValuesFrom ?sujeitos .
+
+                ?games rdf:type myOnt:Jogo .
+                ?games rdf:type owl:NamedIndividual .
+                ?games rdf:type ?gamesTypes .
+                ?gamesTypes owl:someValuesFrom ?sujeitos .
+            }
+            """ % (self.prefix, by_name)
+            result_games = self.query(query_class)
+            games = []
+            for row in result_games:
+                games += row
+        except BaseException:
+            games = {}
+
+        return {'classes': classes, 'properties': properties, 'games': games}
 
     def add_instance(self, payload):
         class_name = payload['class_name']
