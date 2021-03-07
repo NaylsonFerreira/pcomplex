@@ -1,5 +1,5 @@
 from django.urls import path, include, reverse_lazy
-from .views import singup_json, singup
+from .views import singup_json, singup, ProfileViewSet, me
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -7,6 +7,7 @@ from rest_framework.authtoken import views as auth_token
 from rest_framework import routers
 
 router = routers.DefaultRouter()
+router.register(r'profile', ProfileViewSet, basename='profile')
 
 app_name = "core_app"
 urlpatterns = [
@@ -50,6 +51,7 @@ urlpatterns = [
          name='password_reset_complete'
          ),
     path('api/', include((router.urls, 'api'), namespace=None)),
+    path('me/', me, name="me"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

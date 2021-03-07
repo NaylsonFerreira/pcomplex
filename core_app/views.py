@@ -4,9 +4,13 @@ from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.views.decorators.csrf import csrf_exempt
-import json
 from rest_framework.authtoken.models import Token
 from django.core.exceptions import ValidationError
+from .serializers import ProfileSerializer
+from .models import Profile
+from rest_framework.decorators import api_view
+from rest_framework import viewsets
+import json
 
 
 @csrf_exempt
@@ -74,3 +78,27 @@ def singup(request):
         form = UserCreationForm()
     return render(request, 'core_app/singup.html',
                   {'form': form}, status=status)
+
+
+def loadUser(request):
+    if request.auth:
+        token = request.auth
+        user = Token.objects.get(key=token).user
+        return user
+
+    if request.user:
+        return request.user
+
+
+@api_view(['GET'])
+def me(request):
+    user = loadUser(request)
+    profile = ProfileSerializer(user.profile)
+    return JsonResponse(profile.data, safe=False, status=200)
+
+
+class ProfileViewSet(viewsets.ModelViewSet):
+    serializer_class = ProfileSerializer
+
+    def get_queryset(self):
+        return Profile.objects.filter(user=self.request.user)
