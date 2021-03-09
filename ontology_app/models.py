@@ -90,5 +90,6 @@ class JogoAdmin(admin.ModelAdmin):
 
 @receiver(pre_save, sender=Jogo)
 def save_jogo(sender, instance, **kwargs):
-    slug = instance.link.split('?id=')[-1].split('&')[0]
-    instance.slug = slug
+    if instance.link:
+        slug = instance.link.split('?id=')[-1].split('&')[0]
+        instance.slug = slug
