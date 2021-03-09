@@ -5,9 +5,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.authtoken import views as auth_token
 from rest_framework import routers
+from ontology_app.views import JogoViewSet
+
 
 router = routers.DefaultRouter()
 router.register(r'profile', ProfileViewSet, basename='profile')
+router.register(r'jogo', JogoViewSet, basename='jogo')
 
 app_name = "core_app"
 urlpatterns = [

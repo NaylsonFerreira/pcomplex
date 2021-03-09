@@ -62,3 +62,33 @@ class OntologyAdmin(admin.ModelAdmin):
         if not request.user.is_superuser:
             obj.user = request.user
         super().save_model(request, obj, form, change)
+
+
+class Jogo(models.Model):
+    nome = models.CharField(max_length=50)
+    link = models.URLField(max_length=200, null=True, blank=True)
+    icon = models.URLField(max_length=200, null=True, blank=True)
+    slug = models.CharField(max_length=50)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Jogo"
+        verbose_name_plural = "Jogos"
+
+    def __str__(self):
+        return self.nome
+
+
+class JogoAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'slug', 'created_at', 'updated_at')
+    readonly_fields = ('slug', 'created_at', 'updated_at')
+    list_display_links = ('__str__',)
+    empty_value_display = '--'
+    search_fields = ['nome', 'slug']
+
+
+@receiver(pre_save, sender=Jogo)
+def save_jogo(sender, instance, **kwargs):
+    slug = instance.link.split('?id=')[-1].split('&')[0]
+    instance.slug = slug

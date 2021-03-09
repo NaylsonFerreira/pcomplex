@@ -4,8 +4,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import render
-from .models import Ontology
+from .models import Ontology, Jogo
 from rest_framework.decorators import api_view
+from rest_framework import serializers, viewsets
 
 
 def index(request):
@@ -106,3 +107,25 @@ class OntologyDelete(DeleteView):
     model = Ontology
     exclude = ('user',)
     template_name = 'ontology_app/form.html'
+
+
+class JogoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Jogo
+        fields = '__all__'
+        read_only_fields = ['slug', 'nome']
+
+
+class JogoViewSet(viewsets.ModelViewSet):
+    serializer_class = JogoSerializer
+    queryset = Jogo.objects.all()
+
+    def list(self, request):
+        ontJogos = Ontology.objects.get(slug='PlayProfile')
+        ontology = Ontology_class(ontJogos.file.name)
+        listaJogos = ontology.get_instances_of('Jogo')
+        for jogo in listaJogos:
+            Jogo.objects.get_or_create(nome=jogo)
+        queryset = Jogo.objects.all()
+        serializer = JogoSerializer(queryset, many=True)
+        return JsonResponse(serializer.data, safe=False)
