@@ -4,4 +4,3 @@
  internet. Uma vez publicada a ontologia, será possível acessar os recursos no formato JSON</p>
 
 https://pcomplex.herokuapp.com
-
