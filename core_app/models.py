@@ -2,16 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from storages.backends.ftp import FTPStorage
 from django.core.files.storage import FileSystemStorage
 from rest_framework.authtoken.models import Token
 from django.contrib import admin
-from django.conf import settings
 
 SERVIDOR_FTP_WEB = FileSystemStorage()
-
-if not settings.DEBUG:
-    SERVIDOR_FTP_WEB = FTPStorage()
 
 GENERO = (('M', 'Masculino'), ('F', 'Feminino'))
 

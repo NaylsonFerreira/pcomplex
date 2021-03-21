@@ -7,6 +7,8 @@ from django.shortcuts import render
 from .models import Ontology, Jogo
 from rest_framework.decorators import api_view
 from rest_framework import serializers, viewsets
+from owlready2 import sync_reasoner
+sync_reasoner()
 
 
 def index(request):

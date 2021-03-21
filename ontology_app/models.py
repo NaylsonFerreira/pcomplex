@@ -2,19 +2,14 @@ from django.db import models
 from django.urls import reverse
 from django.contrib import admin
 from django.utils import timezone, text
-from django.conf import settings
 from django.core import validators
 from django.dispatch import receiver
 from django.db.models.signals import pre_save
 from django.contrib.auth.models import User
-from storages.backends.ftp import FTPStorage
 from django.core.files.storage import FileSystemStorage
 
 
 SERVIDOR_FTP_WEB = FileSystemStorage()
-
-if settings.FTP_STORAGE_LOCATION:
-    SERVIDOR_FTP_WEB = FTPStorage()
 
 
 class Ontology(models.Model):

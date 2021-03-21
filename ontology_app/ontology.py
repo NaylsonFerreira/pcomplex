@@ -1,9 +1,9 @@
-from owlready2 import onto_path, sync_reasoner, get_ontology, default_world, destroy_entity
-from pcomplex_project.settings import MEDIA_URL
+from owlready2 import onto_path, get_ontology, default_world, destroy_entity
+from pcomplex_project.settings import MEDIA_URL, BASE_DIR
 
 
 class Ontology():
-    dir_path = MEDIA_URL
+    dir_path = str(BASE_DIR) + "/" + str(MEDIA_URL)
     file_name = ""
     path = ""
     onto_path.append(dir_path)
@@ -22,10 +22,6 @@ class Ontology():
         ontology.load()
         self.base_iri = ontology.base_iri
         self.ontology = ontology
-        try:
-            sync_reasoner()
-        except BaseException:
-            pass
 
     def query(self, query="", show_print=False):
         self.load()

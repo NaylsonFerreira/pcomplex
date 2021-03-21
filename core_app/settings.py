@@ -4,7 +4,7 @@ from django.conf import settings
 import os
 
 SECRET_KEY = get_env('SECRET_KEY', 'Debug')
-DEBUG = get_env('DEBUG', True)
+DEBUG = get_env('DEBUG', False)
 
 if get_env('DB_NAME', False):
     DATABASES = {
